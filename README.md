@@ -13,6 +13,7 @@ This is a Telegram Bot written in Python for mirroring files on the Internet to 
 - Appdrive Support
 - Megasdkrest Client implimentation
 - Change commands directly from config.env
+- Auto Delete All Bot Related Message in AUTO_DELETE_UPLOAD_MESSAGE_DURATION duration
 - And many more little changes can't remember
 
 ## From Other Repositories
@@ -114,13 +115,14 @@ _____REMOVE_THIS_LINE_____=True
 Fill up rest of the fields. Meaning of each field is discussed below:
 **0. Special Vars for features added by Arsh **
 
-- `LEECH_LOG` - Chat id of channel/group where leeched files will be uploaded, **NOTE:** only put 1 channel/group id starts with -100xxxxxxxxx, if you leave this empty bot will not send leeched files anywhere.
+- `LEECH_LOG` - Chat id of channel/group where leeched files will be uploaded, **NOTE:** only put 1 channel/group id starts with -100xxxxxxxxx, if you leave this empty bot will sent leech files in current chat.
 - `MIRROR_LOGS` - Chat id of channels/groups where you want to store Mirror logs
 - `BOT_PM` - set it `True` if you want to send mirror links and leeched files in user's PM, Default is `False`.
 - `MEGAREST` - set it `True` if you want to use Megasdkrest, Default is `False`.
 - `APPDRIVE_EMAIL` - Your Appdrive account email
 - `APPDRIVE_PASS` - Your Appdrive account password
 - `SOURCE_LINK` -  set it `True` if you want to get Source Link of Mirrored/Cloned file,  Default is `False`.
+- `AUTO_DELETE_UPLOAD_MESSAGE_DURATION` Interval of time (in seconds), after which the bot deletes it's message and command message which is expected to be viewed instantly. **NOTE**: Set to `-1` to disable auto upload message deletion. `Int`
 - *1. Required Fields**
 
 - `BOT_TOKEN`: The Telegram Bot Token that you got from [@BotFather](https://t.me/BotFather)
